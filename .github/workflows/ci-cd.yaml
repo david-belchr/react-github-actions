@@ -1,0 +1,25 @@
+name: CI/CD Pipeline
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Lint and Test
+        run: |
+          npm run lint
+          npm run test
+
+      - name: Build
+        run: npm run build
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.4.1
+        with:
+          branch: gh-pages
+          folder: build
