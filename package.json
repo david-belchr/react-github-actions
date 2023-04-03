@@ -1,4 +1,5 @@
 {
+  "homepage": "https://davidsnap.github.io/react-github-actions",
   "name": "react-github-actions",
   "version": "0.1.0",
   "private": true,
